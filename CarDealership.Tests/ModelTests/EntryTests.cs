@@ -21,5 +21,23 @@ namespace CarDealership.Tests
       Entry newEntry = new Entry("minivan");
       Assert.AreEqual(typeof(Entry), newEntry.GetType());
     }
+
+    [TestMethod]
+    public void GetVehicleType_ReturnsVehicleType_String()
+    {
+      string description = "minivan";
+      Entry newEntry = new Entry(description);
+      string result = newEntry.VehicleType;
+      Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetVehicleType_SetsValueOfVehicleType_Void()
+    {
+      Entry newEntry = new Entry("minivan");
+      string editedDescription = "SUV";
+      newEntry.VehicleType = editedDescription;
+      Assert.AreEqual(editedDescription, newEntry.VehicleType);
+    }
   }
 }
