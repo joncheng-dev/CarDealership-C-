@@ -6,11 +6,13 @@ namespace CarDealership.Models
   {
     public string VehicleType { get; set; }
     public int VehicleYear { get; set; }
+    public string VehicleMake { get; set; }
 
-    public Entry(string vehicleType, int vehicleYear)
+    public Entry(string type, int year, string make)
     {
-      VehicleType = vehicleType;
-      VehicleYear = vehicleYear;
+      VehicleType = type;
+      VehicleYear = year;
+      VehicleMake = make;
     }
   }
 }

@@ -20,9 +20,9 @@ namespace CarDealership.Controllers
     }
 
     [HttpPost("/inventory")]
-    public ActionResult Create(string vehicleType, int vehicleYear)
+    public ActionResult Create(string vehicleType, int vehicleYear, string vehicleMake)
     {
-      Entry anEntry = new Entry(vehicleType, vehicleYear);
+      Entry anEntry = new Entry(vehicleType, vehicleYear, vehicleMake);
       return RedirectToAction("Index");
     }
 
