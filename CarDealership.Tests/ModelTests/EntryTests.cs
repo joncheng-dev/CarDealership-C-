@@ -18,7 +18,7 @@ namespace CarDealership.Tests
     [TestMethod]
     public void EntryConstructor_CreatesInstanceOfEntry_Entry()
     {
-      Entry newEntry = new Entry("minivan");
+      Entry newEntry = new Entry("minivan", 2000);
       Assert.AreEqual(typeof(Entry), newEntry.GetType());
     }
 
@@ -26,7 +26,7 @@ namespace CarDealership.Tests
     public void GetVehicleType_ReturnsVehicleType_String()
     {
       string description = "minivan";
-      Entry newEntry = new Entry(description);
+      Entry newEntry = new Entry(description, 2000);
       string result = newEntry.VehicleType;
       Assert.AreEqual(description, result);
     }
@@ -34,10 +34,29 @@ namespace CarDealership.Tests
     [TestMethod]
     public void SetVehicleType_SetsValueOfVehicleType_Void()
     {
-      Entry newEntry = new Entry("minivan");
+      Entry newEntry = new Entry("minivan", 2000);
       string editedDescription = "SUV";
       newEntry.VehicleType = editedDescription;
       Assert.AreEqual(editedDescription, newEntry.VehicleType);
+    }
+
+    [TestMethod]
+    public void GetVehicleYear_ReturnsVehicleYear_Int()
+    {
+      string description = "minivan";
+      int year = 2023;
+      Entry newEntry = new Entry(description, year);
+      int checkYear = newEntry.VehicleYear;
+      Assert.AreEqual(year, checkYear);
+    }
+
+    [TestMethod]
+    public void SetVehicleYear_SetsValueOfVehicleYear_Void()
+    {
+      Entry newEntry = new Entry("minivan", 2000);
+      int editedVehicleYear = 2023;
+      newEntry.VehicleYear = editedVehicleYear;
+      Assert.AreEqual(editedVehicleYear, newEntry.VehicleYear);
     }
   }
 }
