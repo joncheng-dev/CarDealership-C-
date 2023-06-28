@@ -88,5 +88,14 @@ namespace CarDealership.Tests
       Entry newEntry = new Entry(type, year, make, model);
       Assert.AreEqual(model, newEntry.VehicleModel);
     }
+
+    [TestMethod]
+    public void SetVehicleModel_SetsValueOfVehicleModel_Void()
+    {
+      Entry newEntry = new Entry("minivan", 2000, "Toyota", "Camry");
+      string editedVehicleModel = "Corolla";
+      newEntry.VehicleModel = editedVehicleModel;
+      Assert.AreEqual(editedVehicleModel, newEntry.VehicleModel);
+    }
   }
 }
