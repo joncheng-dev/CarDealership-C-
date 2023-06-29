@@ -103,5 +103,24 @@ namespace CarDealership.Tests
       List<Entry> result = Entry.GetAll();
       CollectionAssert.AreEqual(carList, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEntries_EntryList()
+    {
+      string type1 = "minivan";
+      int year1 = 2023;
+      string make1 = "Toyota";
+      string model1 = "Camry";
+      Entry newEntry1 = new Entry(type1, year1, make1, model1);
+      string type2 = "SUV";
+      int year2 = 2022;
+      string make2 = "Mazda";
+      string model2 = "3";
+      Entry newEntry2 = new Entry(type2, year2, make2, model2);
+      
+      List<Entry> carList = new List<Entry> { newEntry1, newEntry2 };
+      List<Entry> result = Entry.GetAll();
+      CollectionAssert.AreEqual(carList, result);      
+    }
   }
 }
