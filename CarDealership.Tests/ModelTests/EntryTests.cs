@@ -6,14 +6,12 @@ using System;
 namespace CarDealership.Tests
 {
   [TestClass]
-  public class EntryTests
+  public class EntryTests : IDisposable
   {
-  // public class EntryTests : IDisposable
-  // {
-    // public void Dispose()
-    // {
-    //   Entry.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Entry.ClearAll();
+    }
 
     [TestMethod]
     public void EntryConstructor_CreatesInstanceOfEntry_Entry()
@@ -96,6 +94,14 @@ namespace CarDealership.Tests
       string editedVehicleModel = "Corolla";
       newEntry.VehicleModel = editedVehicleModel;
       Assert.AreEqual(editedVehicleModel, newEntry.VehicleModel);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_EntryList()
+    {
+      List<Entry> carList = new List<Entry> { };
+      List<Entry> result = Entry.GetAll();
+      CollectionAssert.AreEqual(carList, result);
     }
   }
 }
