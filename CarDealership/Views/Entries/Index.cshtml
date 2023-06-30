@@ -16,12 +16,12 @@
     {
       <p>There are no cars in the list.</p>
     }
+    @foreach (Entry item in Model)
+    {
     <ul>
-      @* @foreach (Item item in Model)
-      {
-        <li>@item.Description</li>
-      } *@
+      <li>@item.VehicleType, @item.VehicleYear, @item.VehicleMake, @item.VehicleModel</li>
     </ul>
-    <a href="/items/new">Add a new entry.</a>
+    }
+    <a href="/inventory/newentry">Add a new entry.</a>
   </body>
 </html>

@@ -6,12 +6,12 @@ namespace CarDealership.Controllers
 {
   public class EntriesController : Controller
   {
-    // [HttpGet("/inventory")]
-    // public ActionResult Index()
-    // {
-    //   List<Entry> allEntries = Entry.GetAll();
-    //   return View(allEntries);
-    // }
+    [HttpGet("/inventory")]
+    public ActionResult Index()
+    {
+      List<Entry> allEntries = Entry.GetAll();
+      return View(allEntries);
+    }
 
     [HttpGet("/inventory/newentry")]
     public ActionResult CreateForm()
